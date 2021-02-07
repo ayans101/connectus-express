@@ -3,6 +3,8 @@ const app = express();
 const port = 8080;
 const expressLayouts = require('express-ejs-layouts');
 
+app.use(express.static('./assets'));
+
 app.use(expressLayouts);
 
 //  use express router
