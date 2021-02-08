@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const port = 8080;
 const expressLayouts = require('express-ejs-layouts');
-const db =require('./config/mongoose');
+const db = require('./config/mongoose');
+const User = require('./models/user');
 
 app.use(express.static('./assets'));
 
