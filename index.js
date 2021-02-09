@@ -4,9 +4,8 @@ const app = express();
 const port = 8080;
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
-const User = require('./models/user');
 
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser());
 
