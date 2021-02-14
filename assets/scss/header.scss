@@ -1,0 +1,46 @@
+#layout-header{
+    nav{
+        height: 55px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+        background: white;
+        // color: white;
+        // box-shadow: 1px 1px 1px 1px lightgrey;
+
+        .mini-logo{
+            p{
+                // margin: 5px;
+                font-family: monospace;
+                font-size: 1.4rem;
+                font-weight: bold;
+            }
+        }
+
+        .auth-links{
+            ul{
+                // margin: 5% 5px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                list-style: none;
+
+                li{
+                    margin-right: 40px;
+                    a{
+                        font-family: monospace;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+
+        a{
+            color: #1a77f2;
+            text-decoration: none;
+        }
+
+    }
+}

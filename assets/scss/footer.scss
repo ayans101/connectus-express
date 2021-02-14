@@ -1,0 +1,26 @@
+#layout-footer{
+    height: 60px;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: monospace;
+
+    a{
+        text-decoration: none;
+    }
+
+    .footer-nav{
+        ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            list-style: none;
+
+            li{
+                margin-right: 40px;
+            }
+        }
+    }
+}
