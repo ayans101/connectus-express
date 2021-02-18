@@ -12,7 +12,7 @@ module.exports.create = async function(req, res){
             return res.status(200).json({
                 data: {
                     post: post,
-                    message: 'Post created!'
+                    message: 'Post created'
                 }
             });
         }
