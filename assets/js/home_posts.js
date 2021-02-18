@@ -93,5 +93,16 @@
         });
     }
 
+    // loop over all the existing posts on the page (when the window loads for the first time) and call the delete post method on delete link of each
+    let convertPostsToAjax = function(){
+        $('#posts-list-container>ul>li').each(function(){
+            let self = $(this);
+            let deleteButton = $(' .delete-post-button', self);
+            deletePost(deleteButton);
+        });
+    }
+
+
     createPost();
+    convertPostsToAjax();
 }
