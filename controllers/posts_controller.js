@@ -5,10 +5,14 @@ module.exports.create = async function(req, res){
     try{
         let post = await Post.create({
             content: req.body.content,
-            user: req.user  //  current signed in user is already stored in the locals
+            user: req.user._id  //  current signed in user is already stored in the locals
         });
     
         if(req.xhr){
+            //  populate just the name and email of the user (we'll not want to send the password in the API)
+            post = await post
+            .populate('user', 'name email')
+            .execPopulate();
             return res.status(200).json({
                 data: {
                     post: post,
@@ -36,6 +40,7 @@ module.exports.destroy = async function(req, res){
     
             await Comment.deleteMany({post: req.params.id});
 
+            // send the post id which was deleted back to the views
             if(req.xhr){
                 return res.status(200).json({
                     data: {
