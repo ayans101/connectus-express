@@ -4,12 +4,16 @@ const Comment = require('../../../models/comment');
 module.exports.index = async function(req, res){
 
     let posts = await Post.find({})
-        .sort('-createdAt')
-        .populate('user')
-        .populate({
-            path: 'comments',
-            populate: {
-                path: 'user'
+    .sort('-createdAt')
+    .populate({
+        path: 'user',
+        select: '-password'
+    })
+    .populate({
+        path: 'comments',
+        populate: {
+            path: 'user',
+            select: '-password'
         }
     });
 
@@ -37,7 +41,7 @@ module.exports.destroy = async function(req, res){
             return res.json(401, {
                 message: "You cannot delete this post"
             });
-            
+
         }
 
     }catch(err){
