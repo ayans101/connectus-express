@@ -7,12 +7,14 @@ module.exports.create = async function(req, res){
             content: req.body.content,
             user: req.user._id  //  current signed in user is already stored in the locals
         });
+
+        //  populate just the name and email of the user (we'll not want to send the password in the API)
+        post = await post
+        .populate('user', 'id name email')
+        .execPopulate();
     
         if(req.xhr){
-            //  populate just the name and email of the user (we'll not want to send the password in the API)
-            post = await post
-            .populate('user', 'name email')
-            .execPopulate();
+            
             return res.status(200).json({
                 data: {
                     post: post,
