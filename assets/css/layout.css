@@ -9,3 +9,7 @@ body {
 body #layout-main {
   min-height: 100%;
 }
+
+body a {
+  color: cornflowerblue;
+}
