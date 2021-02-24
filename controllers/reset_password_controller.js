@@ -3,9 +3,9 @@ const ResetPasswordToken = require('../models/reset_password_token');
 const crypto = require('crypto');
 const nodeMailer = require('../config/nodemailer');
 
-module.exports.resetPassword = function(req,res){
+module.exports.forgotPassword = function(req,res){
 
-    return res.render('user_reset_password', {
+    return res.render('user_forgot_password', {
         title: "ConnectUs | Reset Password"
     });
 };
@@ -15,8 +15,8 @@ module.exports.sendResetLink = async function(req, res){
 
         await User.findOne({email: req.body.email}, function(err, user){
             if(!user){
-                req.flash('error', 'User not found with this email');
-                return res.redirect('back');
+                req.flash('error', 'User not signed up with this email');
+                return res.redirect('/users/sign-up');
             }
             ResetPasswordToken.create({
                 user: user,
@@ -31,7 +31,7 @@ module.exports.sendResetLink = async function(req, res){
                         <p>You requested for password reset</p>
                         <h5>
                         click this 
-                        <a href="http://localhost:8080/reset_password/${reset_password_token.accessToken}">link</a>
+                        <a href="http://localhost:8080/users/change_password/${reset_password_token.accessToken}">link</a>
                         to reset password
                         </h5>
                     `

@@ -30,7 +30,7 @@ router.get('/auth/google/callback', passport.authenticate(
 ), usersController.createSession);
 
 
-router.get('/reset-password', reset_password_controller.resetPassword);
-router.post('/reset-password-form', reset_password_controller.sendResetLink);
+router.get('/forgot-password', reset_password_controller.forgotPassword);
+router.post('/forgot-password-form', reset_password_controller.sendResetLink);
 
 module.exports = router;
