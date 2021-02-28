@@ -1,3 +1,15 @@
+const fs =require('fs');
+const rfs = require('rotating-file-stream');
+const path = require('path');
+
+const logDirectory = path.join(__dirname, '../production_logs');
+fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
+
+const accessLogStream = rfs.createStream('access.log', {
+    interval: '1d',
+    path: logDirectory
+})
+
 const development = {
     name: 'development',
     assets_path: './assets',
@@ -17,7 +29,11 @@ const development = {
     google_client_id: "543150578036-fatomr3nqkmv34ng7u23e6s0usolevhs.apps.googleusercontent.com",
     google_client_secret: "2zA3-2rVoyzn3yv-h7aRTtUZ",
     google_call_back_url: "http://localhost:8080/users/auth/google/callback",
-    jwt_secret: 'connectUs'
+    jwt_secret: 'connectUs',
+    morgan: {
+        mode: 'dev',
+        options: {stream: accessLogStream}
+    }
 }
 
 const production = {
@@ -38,7 +54,11 @@ const production = {
     google_client_id: process.env.CONNECTUS_GOOGLE_CLIENT_ID,
     google_client_secret: process.env.CONNECTUS_GOOGLE_CLIENT_SECRET,
     google_call_back_url: process.env.CONNECTUS_GOOGLE_CALLBACK_URL,
-    jwt_secret: process.env.CONNECTUS_JWT_SECRET
+    jwt_secret: process.env.CONNECTUS_JWT_SECRET,
+    morgan: {
+        mode: 'combined',
+        options: {stream: accessLogStream}
+    }
 }
 
 module.exports = eval(process.env.CONNECTUS_ENVIRONMENT) == undefined ? development : eval(process.env.CONNECTUS_ENVIRONMENT);
