@@ -4,5 +4,10 @@
   "css/header.css": "css/header-7cb01ce31a.css",
   "css/home.css": "css/home-c37b72ebaf.css",
   "css/layout.css": "css/layout-3b2d76370c.css",
-  "css/user_profile.css": "css/user_profile-d41d8cd98f.css"
+  "css/user_profile.css": "css/user_profile-d41d8cd98f.css",
+  "images/user_avatar_2.jpg": "images/user_avatar_2-f4747bfe9a.jpg",
+  "js/chat_engine.js": "js/chat_engine-7806dc5520.js",
+  "js/home_post_comments.js": "js/home_post_comments-a1fd555432.js",
+  "js/home_posts.js": "js/home_posts-8d784ec0ed.js",
+  "js/toggle_likes.js": "js/toggle_likes-2d23425fc5.js"
 }
