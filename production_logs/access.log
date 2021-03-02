@@ -190,3 +190,78 @@
 ::1 - - [01/Mar/2021:20:13:49 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
 ::1 - - [01/Mar/2021:20:14:50 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
 ::1 - - [01/Mar/2021:20:14:51 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:07:44:27 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:00:19 +0000] "GET / HTTP/1.1" 200 3049 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:00:19 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:00:39 +0000] "GET / HTTP/1.1" 200 3046 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:00:39 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:00:39 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:00:39 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:00:39 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:03:01 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:03:01 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:03:01 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:03:01 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:03:01 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:17:20 +0000] "GET /css/footer-f113dfa25c.css HTTP/1.1" 404 164 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:17:27 +0000] "GET /css/layout-3b2d76370c.css HTTP/1.1" 404 164 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:17:35 +0000] "GET / HTTP/1.1" 200 3046 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:17:35 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:17:35 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:17:35 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:17:35 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:17:53 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:17:54 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:17:54 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:17:54 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:17:54 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:18:06 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:18:06 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:18:06 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:18:06 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:18:06 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:51:54 +0000] "GET / HTTP/1.1" 200 3129 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:52:01 +0000] "GET /users/sign-in HTTP/1.1" 200 2363 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:08:52:02 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8080/users/sign-in" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+[0mGET / [32m200[0m 51.504 ms - 8032[0m
+[0mGET / [36m304[0m 16.588 ms - -[0m
+[0mGET / [36m304[0m 14.888 ms - -[0m
+[0mGET /users/sign-in [32m200[0m 3.892 ms - 2327[0m
+[0mGET /users/css/header.css [33m404[0m 4.993 ms - 159[0m
+[0mGET /users/css/footer.css [33m404[0m 11.360 ms - 159[0m
+[0mGET /users/css/layout.css [33m404[0m 15.910 ms - 159[0m
+[0mGET /users/sign-in [36m304[0m 6.090 ms - -[0m
+[0mGET /users/css/layout.css [33m404[0m 9.932 ms - 159[0m
+[0mGET /users/css/footer.css [33m404[0m 7.451 ms - 159[0m
+[0mGET /users/css/header.css [33m404[0m 31.984 ms - 159[0m
+[0mGET / [36m304[0m 25.764 ms - -[0m
+[0mGET / [36m304[0m 20.181 ms - -[0m
+[0mGET / [36m304[0m 23.291 ms - -[0m
+[0mGET / [36m304[0m 21.255 ms - -[0m
+[0mGET /users/sign-in [36m304[0m 3.485 ms - -[0m
+[0mGET /users/css/layout.css [33m404[0m 4.138 ms - 159[0m
+[0mGET /users/css/header.css [33m404[0m 4.711 ms - 159[0m
+[0mGET /users/css/footer.css [33m404[0m 5.084 ms - 159[0m
+[0mGET /users/css/layout.css [33m404[0m 12.833 ms - 159[0m
+[0mGET /users/css/footer.css [33m404[0m 8.652 ms - 159[0m
+[0mGET /users/css/header.css [33m404[0m 11.787 ms - 159[0m
+[0mGET /users/sign-in [36m304[0m 24.981 ms - -[0m
+[0mGET /users/css/layout.css [33m404[0m 13.086 ms - 159[0m
+[0mGET /users/css/footer.css [33m404[0m 31.209 ms - 159[0m
+[0mGET /users/css/header.css [33m404[0m 26.620 ms - 159[0m
+[0mGET / [36m304[0m 40.998 ms - -[0m
+[0mGET /users/sign-in [36m304[0m 3.583 ms - -[0m
+[0mGET /users/css/footer.css [33m404[0m 3.285 ms - 159[0m
+[0mGET /users/css/layout.css [33m404[0m 10.988 ms - 159[0m
+[0mGET /users/css/header.css [33m404[0m 20.552 ms - 159[0m
+[0mGET /users/css/layout.css [33m404[0m 11.279 ms - 159[0m
+[0mGET /users/css/footer.css [33m404[0m 15.949 ms - 159[0m
+[0mGET /users/css/header.css [33m404[0m 17.787 ms - 159[0m
+[0mGET /users/css/layout.css [33m404[0m 2.644 ms - 159[0m
+[0mGET /users/sign-in [32m200[0m 20.797 ms - 2330[0m
+[0mGET / [32m200[0m 50.867 ms - 8041[0m
+::1 - - [02/Mar/2021:08:58:30 +0000] "GET / HTTP/1.1" 200 3129 "http://localhost:8080/users/sign-in" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:09:30:51 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:09:30:53 +0000] "GET /users/sign-in HTTP/1.1" 200 2363 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:09:30:54 +0000] "GET /users/sign-up HTTP/1.1" 200 2444 "http://localhost:8080/users/sign-in" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+::1 - - [02/Mar/2021:09:30:55 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8080/users/sign-up" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"

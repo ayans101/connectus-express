@@ -5,68 +5,66 @@ const rev = require('gulp-rev');
 const uglify = require('gulp-uglify-es').default;
 const imagemin = require('gulp-imagemin');
 const del = require('del');
-const { parallel, series } = require('gulp');
-
+const cleanCSS = require('gulp-clean-css');
+const cssbeautify = require('gulp-cssbeautify');
 
 gulp.task('css', function(done){
-    console.log('minifying css...');
+    console.log('css minifying');
     gulp.src('./assets/scss/**/*.scss')
     .pipe(sass())
-    .pipe(cssnano())
-    .pipe(gulp.dest('./assets.css'));
-
+    .pipe(cssbeautify())
+    .pipe(gulp.dest('./assets/css'));
+   
     gulp.src('./assets/**/*.css')
+    .pipe(cssnano())
+    .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(rev())
-    .pipe(gulp.dest('./public/assets'))
+    .pipe(gulp.dest('./public/assets'))  // write rev'd assets to build dir
     .pipe(rev.manifest({
-        cwd: 'public',
-        merge: true
+        base:'./public/assets',
+        merge:true
     }))
     .pipe(gulp.dest('./public/assets'));
-    done();
+    done();   
 });
 
 gulp.task('js', function(done){
     console.log('minifying js...');
-    gulp.src('./assets/js/**/*.js')
-    .pipe(uglify())
-    .pipe(gulp.dest('./assets.js'));
-
     gulp.src('./assets/**/*.js')
+    .pipe(uglify())
     .pipe(rev())
-    .pipe(gulp.dest('./public/assets'))
+    .pipe(gulp.dest('./public/assets'))  // write rev'd assets to build dir
     .pipe(rev.manifest({
-        cwd: 'public/assets',
-        merge: true
+        base:'./public/assets',
+        merge:true
     }))
-    .pipe(gulp.dest('./public/assets'));
+    .pipe(gulp.dest('./public/assets'))
     done();
 });
 
 gulp.task('images', function(done){
-    console.log('compressing images');
+    console.log('compressing images...');
     gulp.src('./assets/**/*.+(png|jpg|gif|svg|jpeg)')
     .pipe(imagemin())
-    .pipe(gulp.dest('./assets.images'));
-
-    gulp.src('./assets/**/*.+(png|jpg|gif|svg|jpeg)')
+    // .pipe(gulp.dest('./public/assets'))
     .pipe(rev())
-    .pipe(gulp.dest('./public/assets'))
+    .pipe(gulp.dest('./public/assets'))  // write rev'd assets to build dir
     .pipe(rev.manifest({
-        cwd: 'public',
-        merge: true
+        base:'./public/assets',
+        merge:true
     }))
     .pipe(gulp.dest('./public/assets'));
     done();
 });
 
-//  empty the public/assets directory
 gulp.task('clean:assets', function(done){
-    del.sync('./public/assets');
+    del.sync('./public');
+    del.sync('./rev-manifest.json');
+    //this will delete the manifest every time gulp build runs
     done();
 });
 
-gulp.task('build', gulp.series('clean:assets', 'css', 'images', 'js'), function(done){
+gulp.task('build', gulp.series('clean:assets' , 'images' , 'css' , 'js'), function(done){
     console.log('Building assets');
     done();
 });
