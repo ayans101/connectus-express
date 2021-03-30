@@ -17,6 +17,7 @@ const MongoStore = require('connect-mongo')(session);
 const sassMiddleware = require('node-sass-middleware');
 const flash = require('connect-flash');
 const customMware = require('./config/middleware');
+const cors = require('cors');
 
 //  setup the chat server to be used with socket.io
 const chatServer = require('http').Server(app);
@@ -34,6 +35,8 @@ if(env.name == 'development'){
         prefix: '/css'
     }));
 }
+
+app.use(cors());    //  add CORS allow cross-origin requests from my API
 
 app.use(express.urlencoded({ extended: true }));
 

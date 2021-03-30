@@ -265,3 +265,23 @@
 ::1 - - [02/Mar/2021:09:30:53 +0000] "GET /users/sign-in HTTP/1.1" 200 2363 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
 ::1 - - [02/Mar/2021:09:30:54 +0000] "GET /users/sign-up HTTP/1.1" 200 2444 "http://localhost:8080/users/sign-in" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
 ::1 - - [02/Mar/2021:09:30:55 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8080/users/sign-up" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36"
+[0mGET / [32m200[0m 108.415 ms - 8041[0m
+[0mGET /favicon.ico [33m404[0m 7.457 ms - 150[0m
+[0mGET /api/v1/posts/ [32m200[0m 15.060 ms - 3260[0m
+[0mGET /api/v1/posts/ [32m200[0m 13.508 ms - 3260[0m
+[0mGET /api/v1/posts/ [32m200[0m 10.732 ms - 3260[0m
+[0mGET /api/v1/posts/ [32m200[0m 43.327 ms - 3260[0m
+[0mGET /api/v1/posts/ [32m200[0m 12.587 ms - 3260[0m
+[0mGET /api/v1/posts/ [32m200[0m 13.972 ms - 3260[0m
+[0mGET /api/v1/posts/ [36m304[0m 40.264 ms - -[0m
+[0mGET /api/v1/posts/ [36m304[0m 16.266 ms - -[0m
+[0mGET /api/v1/posts/ [36m304[0m 22.060 ms - -[0m
+[0mGET /api/v1/posts/ [36m304[0m 16.434 ms - -[0m
+[0mGET /api/v1/posts/ [36m304[0m 20.820 ms - -[0m
+[0mGET /api/v1/posts/ [36m304[0m 11.054 ms - -[0m
+[0mGET /api/v1/posts/ [36m304[0m 7.862 ms - -[0m
+[0mGET /api/v1/posts/ [36m304[0m 18.646 ms - -[0m
+[0mGET /api/v1/posts/ [36m304[0m 49.015 ms - -[0m
+[0mGET /api/v1/posts/ [36m304[0m 18.617 ms - -[0m
+[0mGET /api/v1/posts/ [36m304[0m 46.198 ms - -[0m
+[0mGET /api/v1/posts/ [36m304[0m 44.239 ms - -[0m
