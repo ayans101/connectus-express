@@ -17,7 +17,12 @@ module.exports.createSession = async function(req, res){
             message: "Sign in successful, here is your token, please keep it safe",
             success: true,
             data: {
-                token: jwt.sign(user.toJSON(), env.jwt_secret, {expiresIn: '100000'})
+                token: jwt.sign(user.toJSON(), env.jwt_secret, {expiresIn: '100000'}),
+                user: {
+                    name: user.name,
+                    email: user.email,
+                    _id: user._id
+                }
             }
         });
 
@@ -26,5 +31,39 @@ module.exports.createSession = async function(req, res){
         return res.json(500, {
             message: "Internal Server Error"
         });
+    }
+}
+
+module.exports.registerUser = function(req, res){
+
+    if(req.body.password != req.body.confirm_password){
+        return res.json(400, {
+            message: "The passwords entered do not match",
+            success: false
+        });
+    }else{
+        User.findOne({email: req.body.email}, function(err, user){
+            if(!user){
+                User.create(req.body, function(err, user){
+                    return res.json(200, {
+                        message: "Sign up successful, here is your token, please keep it safe",
+                        success: true,
+                        data: {
+                            token: jwt.sign(user.toJSON(), env.jwt_secret, {expiresIn: '100000'}),
+                            user: {
+                                name: user.name,
+                                email: user.email,
+                                _id: user._id
+                            }
+                        }
+                    });
+                });
+            }else{
+                return res.json(422, {
+                    message: "There already exists an account registered with this email address",
+                    success: false
+                });
+            }
+        });   
     }
 }
