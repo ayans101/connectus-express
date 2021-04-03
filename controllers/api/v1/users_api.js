@@ -73,6 +73,10 @@ module.exports.update = async function(req, res){
     if(req.body.id == req.params.id){
         try{
             await User.findByIdAndUpdate(req.body.id, req.body, function(err, user){
+                user.name = req.body.name;
+                if(req.body.password){
+                    user.password = req.body.password;
+                }
                 return res.json(200, {
                     message: "User updated successfully",
                     success: true,
