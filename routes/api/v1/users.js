@@ -4,5 +4,6 @@ const usersApi = require('../../../controllers/api/v1/users_api');
 
 router.post('/create-session', usersApi.createSession);
 router.post('/register-user', usersApi.registerUser);
+router.post('/update/:id', usersApi.update);
 
 module.exports = router;

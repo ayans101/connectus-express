@@ -67,3 +67,36 @@ module.exports.registerUser = function(req, res){
         });   
     }
 }
+
+module.exports.update = async function(req, res){
+
+    if(req.body.id == req.params.id){
+        try{
+            await User.findByIdAndUpdate(req.body.id, req.body, function(err, user){
+                return res.json(200, {
+                    message: "User updated successfully",
+                    success: true,
+                    data: {
+                        token: jwt.sign(user.toJSON(), env.jwt_secret, {expiresIn: '100000'}),
+                        user: {
+                            name: user.name,
+                            email: user.email,
+                            _id: user._id
+                        }
+                    }
+                });
+            });
+        }catch(err){
+            console.log(err);
+            return res.json(500, {
+                message: "Internal Server Error"
+            });
+        }
+    }else{
+        return res.json(401, {
+            message: "Unauthorized",
+            success: false
+        });
+    }
+
+}
