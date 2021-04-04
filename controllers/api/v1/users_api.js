@@ -104,3 +104,19 @@ module.exports.update = async function(req, res){
     }
 
 }
+
+module.exports.profile = async function(req, res){
+    await User.findById(req.params.id, function(err, user){
+        return res.json(200, {
+            message: "User Details",
+            success: true,
+            data: {
+                user: {
+                    _id: user._id,
+                    name: user.name,
+                    email: user.email,
+                }
+            }
+        });
+    });
+};
