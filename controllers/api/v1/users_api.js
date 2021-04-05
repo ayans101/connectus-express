@@ -105,18 +105,31 @@ module.exports.update = async function(req, res){
 
 }
 
-module.exports.profile = async function(req, res){
-    await User.findById(req.params.id, function(err, user){
-        return res.json(200, {
-            message: "User Details",
-            success: true,
-            data: {
-                user: {
-                    _id: user._id,
-                    name: user.name,
-                    email: user.email,
+module.exports.profile = function(req, res){
+    const authHeader = req.headers['authorization']
+    const token = authHeader && authHeader.split(' ')[1];
+    console.log("****", token);
+    jwt.verify(token, env.jwt_secret, (err, user) => {
+        console.log(err);
+        if (err) {
+            return res.json(403, {
+                message: "User not authenticated",
+                success: false,
+            });
+        };
+        User.findById(req.params.id, function(err, user){
+            return res.json(200, {
+                message: "User Details",
+                success: true,
+                data: {
+                    user: {
+                        _id: user._id,
+                        name: user.name,
+                        email: user.email,
+                    }
                 }
-            }
+            });
         });
-    });
+    
+    })
 };
