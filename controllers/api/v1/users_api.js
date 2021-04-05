@@ -105,7 +105,7 @@ module.exports.update = async function(req, res){
 
 }
 
-module.exports.profile = function(req, res){
+module.exports.profile = async function(req, res){
     const authHeader = req.headers['authorization']
     const token = authHeader && authHeader.split(' ')[1];
     console.log("****", token);
@@ -116,20 +116,21 @@ module.exports.profile = function(req, res){
                 message: "User not authenticated",
                 success: false,
             });
-        };
-        User.findById(req.params.id, function(err, user){
-            return res.json(200, {
-                message: "User Details",
-                success: true,
-                data: {
-                    user: {
-                        _id: user._id,
-                        name: user.name,
-                        email: user.email,
+        }else{
+            User.findById(req.params.id, function(err, user){
+                return res.json(200, {
+                    message: "User Details",
+                    success: true,
+                    data: {
+                        user: {
+                            _id: user._id,
+                            name: user.name,
+                            email: user.email,
+                        }
                     }
-                }
+                });
             });
-        });
+        }
     
     })
 };

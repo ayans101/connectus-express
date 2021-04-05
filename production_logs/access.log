@@ -13858,3 +13858,10 @@
 [0mGET /api/v1/users/603399b10215dd7016dfd1f9 [36m304[0m 5.457 ms - -[0m
 [0mGET /api/v1/users/602bafc421a6098daf1f34dd [36m304[0m 8.941 ms - -[0m
 [0mGET /api/v1/users/602f92613c9778fc88cc7ca2 [36m304[0m 8.538 ms - -[0m
+[0mGET /api/v1/users/603399b10215dd7016dfd1f9 [33m403[0m 15.081 ms - 52[0m
+[0mPOST /api/v1/users/create-session [32m200[0m 12.548 ms - 639[0m
+[0mGET /api/v1/users/603399b10215dd7016dfd1f9 [32m200[0m 6.910 ms - 147[0m
+[0mGET /api/v1/users/603399b10215dd7016dfd1f9 [33m403[0m 3.011 ms - 52[0m
+[0mGET /api/v1/users/603399b10215dd7016dfd1f9 [33m403[0m 4.171 ms - 52[0m
+[0mPOST /api/v1/users/create-session [32m200[0m 3.941 ms - 639[0m
+[0mGET /api/v1/users/603399b10215dd7016dfd1f9 [32m200[0m 12.922 ms - 147[0m
