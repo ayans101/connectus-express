@@ -66,3 +66,50 @@ module.exports.addFriend = async function (req, res) {
 
 
 };
+
+module.exports.fetchUserFriends = async function(req, res) {
+    try{
+        const authHeader = req.headers['authorization']
+        const token = authHeader && authHeader.split(' ')[1];
+        console.log("****", token);
+        let fromUserId;
+        await jwt.verify(token, env.jwt_secret, (err, user) => {
+            console.log(err);
+            if (err) {
+                return res.json(403, {
+                    message: "User not authenticated",
+                    success: false,
+                });
+            }
+            fromUserId = user._id;
+        });
+        let fromUser;
+        await User.findById(fromUserId, (err, user) => {
+            fromUser = user;
+        });
+        let friendships = fromUser.friendships;
+        let friendsList = [];
+        for(let friendship of friendships){
+            console.log('###',friendship);
+            await Friendship.findById(friendship, (err, obj) => {
+                console.log('####', obj);
+                friendsList.push(obj);
+            })
+        }
+        console.log('********',friendsList);
+        return res.json(200, {
+            message: `Friends fetched successfully`,
+            success: true,
+            data: {
+                friends: friendsList
+            }
+        });
+        
+    }catch(err){
+        console.log(err);
+        return res.json(500, {
+            message: "Internal Server Error"
+        });
+    }
+
+}
