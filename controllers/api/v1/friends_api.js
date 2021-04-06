@@ -83,30 +83,26 @@ module.exports.fetchUserFriends = async function(req, res) {
             }
             fromUserId = user._id;
         });
-        let fromUser;
-        await User.findById(fromUserId, (err, user) => {
-            fromUser = user;
-        });
-
-        
-        let friendships = fromUser.friendships;
-        let friendsList = [];
-        for(let friendship of friendships){
-            let friend = await Friendship.findById(friendship)
-            .populate({
-                path: 'to_user',
-                select: '_id name email'
-            });
-            friendsList.push(friend);
-        }
-
-
-        return res.json(200, {
-            message: `Friends fetched successfully`,
-            success: true,
-            data: {
-                friends: friendsList
+        await User.findById(fromUserId, async (err, fromUser) => {
+            let friendships = fromUser.friendships;
+            let friendsList = [];
+            for(let friendship of friendships){
+                let friend = await Friendship.findById(friendship)
+                .populate({
+                    path: 'to_user',
+                    select: '_id name email'
+                });
+                friendsList.push(friend);
             }
+
+
+            return res.json(200, {
+                message: `Friends fetched successfully`,
+                success: true,
+                data: {
+                    friends: friendsList
+                }
+            });
         });
         
     }catch(err){
