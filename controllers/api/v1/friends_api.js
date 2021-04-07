@@ -38,6 +38,7 @@ module.exports.addFriend = async function (req, res) {
                 success: true,
                 data: {
                     friendship: {
+                        _id: friendship._id,
                         to_user: {
                             _id: toUser._id,
                             email: toUser.email,
