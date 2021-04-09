@@ -28,7 +28,8 @@ module.exports.createSession = async function(req, res){
     }catch(err){
         console.log(err);
         return res.json(500, {
-            message: "Internal Server Error"
+            message: "Internal Server Error",
+            success: false
         });
     }
 }
@@ -94,7 +95,8 @@ module.exports.update = async function(req, res){
     }catch(err){
         console.log(err);
         return res.json(500, {
-            message: "Internal Server Error"
+            message: "Internal Server Error",
+            success: false
         });
     }
 
@@ -125,14 +127,43 @@ module.exports.profile = async function(req, res){
     }catch(err){
         console.log(err);
         return res.json(500, {
-            message: "Internal Server Error"
+            message: "Internal Server Error",
+            success: false
         });
     }
 };
 
-module.exports.search = function(req, res){
-    return res.json(401, {
-        message: "Unauthorized",
-        success: false
-    });
+module.exports.searchUsers = async function(req, res){
+    try{
+        // console.log(req.query);
+        // { text: 'abc' }
+        
+        await User.find({ name: { $regex : new RegExp(req.query.text, "i") } }, (err, users) => {
+            const list = users.map((user) => {
+                const usr = {
+                    _id: user._id,
+                    name: user.name,
+                    email: user.email
+                }
+                return usr;
+            });
+            
+            return res.json(200, {
+                message: "Request successful!",
+                success: true,
+                data: {
+                    users: list
+                }
+            });
+            
+        });
+
+    }catch(err){
+        console.log(err);
+        return res.json(500, {
+            message: "Internal Server Error",
+            success: false
+        });
+
+    }
 }
