@@ -1,25 +1,10 @@
 const jwt = require("jsonwebtoken");
 const User = require("../../../models/user");
 const Friendship = require("../../../models/friendship");
-const env = require("../../../config/environment");
 
 module.exports.addFriend = async function (req, res) {
     try{
-        const authHeader = req.headers['authorization']
-        const token = authHeader && authHeader.split(' ')[1];
-        console.log("****", token);
-        let fromUserId;
-        await jwt.verify(token, env.jwt_secret, (err, user) => {
-            console.log(err);
-            if (err) {
-                return res.json(403, {
-                    message: "User not authenticated",
-                    success: false,
-                });
-            }
-            fromUserId = user._id;
-        });
-        let fromUser = await User.findById(fromUserId);
+        let fromUser = await User.findById(req.user._id);
         let toUser = await User.findById(req.params.userId);
 
         let ifFriendshipExists = await Friendship.findOne({
@@ -65,21 +50,7 @@ module.exports.addFriend = async function (req, res) {
 
 module.exports.removeFriend = async function (req, res) {
     try {
-        const authHeader = req.headers['authorization']
-        const token = authHeader && authHeader.split(' ')[1];
-        console.log("****", token);
-        let fromUserId;
-        await jwt.verify(token, env.jwt_secret, (err, user) => {
-            console.log(err);
-            if (err) {
-                return res.json(403, {
-                    message: "User not authenticated",
-                    success: false,
-                });
-            }
-            fromUserId = user._id;
-        });
-        let fromUser = await User.findById(fromUserId);
+        let fromUser = await User.findById(req.user._id);
         let toUser = await User.findById(req.params.userId);
 
         let existingFriendship = await Friendship.findOne({
@@ -107,20 +78,7 @@ module.exports.removeFriend = async function (req, res) {
 
 module.exports.fetchUserFriends = async function(req, res) {
     try{
-        const authHeader = req.headers['authorization']
-        const token = authHeader && authHeader.split(' ')[1];
-        console.log("****", token);
-        let fromUserId;
-        await jwt.verify(token, env.jwt_secret, (err, user) => {
-            console.log(err);
-            if (err) {
-                return res.json(403, {
-                    message: "User not authenticated",
-                    success: false,
-                });
-            }
-            fromUserId = user._id;
-        });
+        let fromUserId = req.user._id;
         await User.findById(fromUserId, async (err, fromUser) => {
             let friendships = fromUser.friendships;
             let friendsList = [];

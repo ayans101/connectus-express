@@ -69,71 +69,46 @@ module.exports.registerUser = function(req, res){
 
 module.exports.update = async function(req, res){
 
-    if(req.body.id == req.params.id){
-        try{
-            await User.findById(req.body.id, function(err, usr){
-                const authHeader = req.headers['authorization']
-                const token = authHeader && authHeader.split(' ')[1];
-                console.log("****", token);
-
-                jwt.verify(token, env.jwt_secret, (_err, _usr) => {
-                    if (!_usr || _err || _usr.email != usr.email) {
-                        return res.json(401, {
-                            message: "User not authorized",
-                            success: false,
-                        });
-                    }else{
-                        User.findByIdAndUpdate(req.body.id, req.body, function(err, user){
-                            user.name = req.body.name;
-                            if(req.body.password){
-                                user.password = req.body.password;
-                            }
-                            user.save();
-                            return res.json(200, {
-                                message: "User updated successfully",
-                                success: true,
-                                data: {
-                                    token: jwt.sign(user.toJSON(), env.jwt_secret, {expiresIn: '1d'}),
-                                    user: {
-                                        name: user.name,
-                                        email: user.email,
-                                        _id: user._id
-                                    }
-                                }
-                            });
-                        }) 
+    try{
+        if(req.body.id == req.params.id && req.body.id == req.user._id){
+            await User.findByIdAndUpdate(req.body.id, req.body, function(err, user){
+                user.name = req.body.name;
+                if(req.body.password){
+                    user.password = req.body.password;
+                }
+                user.save();
+                return res.json(200, {
+                    message: "User updated successfully",
+                    success: true,
+                    data: {
+                        token: jwt.sign(user.toJSON(), env.jwt_secret, {expiresIn: '1d'}),
+                        user: {
+                            name: user.name,
+                            email: user.email,
+                            _id: user._id
+                        }
                     }
-                })
-            });
-        }catch(err){
-            console.log(err);
-            return res.json(500, {
-                message: "Internal Server Error"
-            });
+                });
+            }) 
         }
-
-    }else{
-        return res.json(401, {
-            message: "Unauthorized",
-            success: false
+    }catch(err){
+        console.log(err);
+        return res.json(500, {
+            message: "Internal Server Error"
         });
     }
 
 }
 
 module.exports.profile = async function(req, res){
-    const authHeader = req.headers['authorization']
-    const token = authHeader && authHeader.split(' ')[1];
-    console.log("****", token);
-    jwt.verify(token, env.jwt_secret, (err, user) => {
-        console.log(err);
-        if (err) {
-            return res.json(403, {
-                message: "User not authenticated",
-                success: false,
-            });
-        }else{
-            User.findById(req.params.id, function(err, user){
+    try{
+        await User.findById(req.params.id, function(err, user){
+            if(!user){
+                return res.json(404, {
+                    message: "User not found",
+                    success: false,
+                })
+            }else{
                 return res.json(200, {
                     message: "User Details",
                     success: true,
@@ -145,8 +120,19 @@ module.exports.profile = async function(req, res){
                         }
                     }
                 });
-            });
-        }
-    
-    })
+            }
+        });
+    }catch(err){
+        console.log(err);
+        return res.json(500, {
+            message: "Internal Server Error"
+        });
+    }
 };
+
+module.exports.search = function(req, res){
+    return res.json(401, {
+        message: "Unauthorized",
+        success: false
+    });
+}
